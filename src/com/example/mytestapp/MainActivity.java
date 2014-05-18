@@ -13,6 +13,8 @@ import android.os.Build;
 
 public class MainActivity extends ActionBarActivity {
 
+	private CalculatorEngine calculatorEngine;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -22,6 +24,8 @@ public class MainActivity extends ActionBarActivity {
 			getSupportFragmentManager().beginTransaction()
 					.add(R.id.container, new PlaceholderFragment()).commit();
 		}
+		
+		this.calculatorEngine = new CalculatorEngine();
 	}
 
 	@Override
@@ -59,6 +63,15 @@ public class MainActivity extends ActionBarActivity {
 					false);
 			return rootView;
 		}
+	}
+	
+	public int makeAddition(int numberOne, int numberTwo) {
+		
+		int result = 0;
+		
+		result = numberOne + numberTwo;
+		
+		return result;
 	}
 
 }
